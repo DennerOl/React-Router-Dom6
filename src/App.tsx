@@ -1,6 +1,6 @@
 
 import './App.css'
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function App() {
 
@@ -19,6 +19,7 @@ function App() {
           <Link to="/invoices">Invoices</Link> |{" "}
           <Link to="/expenses">Expenses</Link>
         </nav>
+        <Outlet />
       </div>
 
     </>
