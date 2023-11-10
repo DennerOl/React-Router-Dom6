@@ -1,5 +1,6 @@
-import { Link, Outlet } from 'react-router-dom';
+import './styles.css';
 import { getInvoices } from '../../data';
+import { NavLink, Outlet } from 'react-router-dom';
 
 export default function Invoices() {
 
@@ -20,14 +21,14 @@ export default function Invoices() {
         {/* faço renderizer um link para cada uma das invoices
   do data.ts */}
         {invoices.map((invoice) => (
-          <Link
-            style={{ display: "block", margin: "1rem 0" }}
+          /* diz quais itens da barra navlink esta ativo para mudar o style*/
+          <NavLink className={({ isActive }) => isActive ? "dblock nav-red" : "dblock nav-blue"}
             /* rota dos invoices */
             to={`/invoices/${invoice.number}`}
             key={invoice.number}
           >
             {invoice.name}
-          </Link>
+          </NavLink>
         ))}
       </nav>
       <Outlet />
