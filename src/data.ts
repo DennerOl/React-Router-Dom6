@@ -1,4 +1,4 @@
-const invoices = [
+let invoices = [
   {
     name: "Santa Monica",
     number: 1995,
@@ -38,5 +38,13 @@ export function getInvoices() {
 
 export function getInvoice(number: number) {
   return invoices.find((invoice) => invoice.number === number
+  );
+}
+
+/* deleta uma invoce que eu passar o id
+deleto as invoices que tem um numero diferente do meu argumento*/
+export function deleteInvoice(number: number) {
+  invoices = invoices.filter(
+    (invoice) => invoice.number !== number
   );
 }
